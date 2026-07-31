@@ -1,0 +1,14 @@
+# Claude Code — personal/local settings (never commit)
+.claude/settings.local.json
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Dependencies / build (not used yet, but future-proof)
+node_modules/
+dist/
