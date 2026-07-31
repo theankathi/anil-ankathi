@@ -1,0 +1,108 @@
+:root {
+  --bg: #1c1c1e;
+  --panel: #2c2c2e;
+  --key: #3a3a3c;
+  --key-hover: #4a4a4c;
+  --action: #a5a5a5;
+  --action-text: #1c1c1e;
+  --operator: #ff9f0a;
+  --operator-hover: #ffb340;
+  --text: #ffffff;
+  --muted: #8e8e93;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(160deg, #000000, #1c1c1e);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  padding: 1rem;
+}
+
+.calculator {
+  width: 100%;
+  max-width: 340px;
+  background: var(--bg);
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.display {
+  padding: 12px 12px 24px;
+  text-align: right;
+  overflow: hidden;
+}
+
+.display__history {
+  min-height: 24px;
+  color: var(--muted);
+  font-size: 1.1rem;
+  word-break: break-all;
+}
+
+.display__current {
+  color: var(--text);
+  font-size: 3.4rem;
+  font-weight: 300;
+  line-height: 1.1;
+  word-break: break-all;
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.key {
+  height: 70px;
+  border: none;
+  border-radius: 50%;
+  background: var(--key);
+  color: var(--text);
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.05s ease;
+  user-select: none;
+}
+
+.key:hover { background: var(--key-hover); }
+.key:active { transform: scale(0.94); }
+
+.key--action {
+  background: var(--action);
+  color: var(--action-text);
+  font-weight: 500;
+}
+.key--action:hover { background: #bcbcbc; }
+
+.key--operator {
+  background: var(--operator);
+  font-size: 1.9rem;
+}
+.key--operator:hover { background: var(--operator-hover); }
+.key--operator.is-active {
+  background: var(--text);
+  color: var(--operator);
+}
+
+.key--zero {
+  grid-column: span 2;
+  border-radius: 35px;
+  text-align: left;
+  padding-left: 28px;
+}
+
+.key--equals {
+  background: var(--operator);
+}
+.key--equals:hover { background: var(--operator-hover); }
